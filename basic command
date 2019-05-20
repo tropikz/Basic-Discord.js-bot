@@ -1,0 +1,28 @@
+const Discord = require('discord.js');
+
+const client = new Discord.Client();
+
+//below is a return message that will state your bot has been logged into (Logged in as: Toga#6337)
+
+client.on('ready', () => {
+    console.log("Logged in as: " + client.user.tag)
+})
+
+//put in your own command as well as response down below
+
+client.on('message', message => {
+  if (message.content == "command") {
+    message.channel.send("response");
+  }
+});
+
+//paste your token below in place of "token_here"
+
+bot_token = "token_here"
+
+client.login(bot_token)
+
+/*alternatively you can use "if (message.content.startsWith("command")) {" although i would only recommend doing this for commands
+  that require input from the sender (e.g ?8ball <message>) as if you were to make this command ?8ball help it would recognise the 
+  ?8ball and would send back the response message for ?8ball.
+*/
