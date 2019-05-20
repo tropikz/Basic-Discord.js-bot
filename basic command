@@ -11,8 +11,8 @@ client.on('ready', () => {
 //put in your own command as well as response down below
 
 client.on('message', message => {
-  if (message.content == "command") {
-    message.channel.send("response");
+  if (message.content == "?message") {
+    message.channel.send("message?");
   }
 });
 
